@@ -5,3 +5,11 @@ int main(int argc, char * argv[]) {
     return 0;
   }
 }
+
+int test(int condition) {
+	if(condition > 0) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
