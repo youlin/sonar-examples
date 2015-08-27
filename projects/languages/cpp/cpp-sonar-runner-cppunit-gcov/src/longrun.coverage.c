@@ -5,13 +5,15 @@
 #include <stdlib.h>
 
 static unsigned long long i = 0;
-void __gcov_flush(void); /* check in gcc sources gcc/gcov-io.h for the prototype */
+//__gcov_flush(void);/* check in gcc sources gcc/gcov-io.h for the prototype */
+void _gcov_dump(void); 
 
 void my_handler(int signum)
 {
   printf("received signal\n");
   printf("%llu\n", i);
-  __gcov_flush(); /* dump coverage data on receiving SIGUSR1 */
+  //__gcov_flush(); /* dump coverage data on receiving SIGUSR1 */
+  _gcov_dump();
 }
 
 int main(int argc, char **argv)
